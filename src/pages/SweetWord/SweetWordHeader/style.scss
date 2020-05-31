@@ -1,0 +1,58 @@
+.sweet-word-header-box {
+  @include flex-center;
+  flex-direction: column;
+  color: $color-pink-3;
+
+  &__logo {
+    width: 15rem;
+    height: 15rem;
+    animation: fadeInBottom 4s linear infinite alternate forwards;
+  }
+  &__title {
+    will-change: transform;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    .word {
+      border: 1px solid rgba($color-pink-3, $alpha: 0.8);
+      border-radius: 0.6rem;
+      margin: 0 1rem;
+      width: 11rem;
+      height: 12rem;
+      &::before,
+      &::after {
+        background-color: rgba($color-pink-3, $alpha: 0.8);
+      }
+      .text {
+        font-size: 10rem;
+        font-weight: 800;
+      }
+      .pinyin {
+        font-size: 4rem;
+        font-weight: 600;
+        position: absolute;
+        bottom: 100%;
+      }
+    }
+  }
+  .start-btn {
+    will-change: transform;
+    border: none;
+    position: relative;
+    margin-top: 3rem;
+    font-size: 4rem;
+    font-weight: 700;
+    padding: 0.4rem 2rem;
+    box-sizing: border-box;
+    background-color: rgba($color-pink-3, 1);
+    color: white;
+
+    .heart-img {
+      position: absolute;
+      animation: heart-bubble 3s ease infinite;
+      width: 2rem;
+      height: 2rem;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,186 @@
+@import "./SettingForm/style.scss";
+.life-progress {
+  @include full-view;
+  @include bg;
+  position: relative;
+  user-select: none;
+  background-image: url(../../assets/img/live-progress-bg.jpg);
+  font-family: "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+
+  color: $color-white;
+  &__particle {
+    width: 100vw;
+    height: 100vh;
+  }
+  .header-box {
+    font-size: 6rem;
+    position: absolute;
+    @include flex-center;
+    top: 10rem;
+    left: 0;
+    right: 0;
+    letter-spacing: 1rem;
+    font-weight: 600;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -4rem;
+      background-color: rgba($color-black, $alpha: 0.3);
+      width: 100%;
+      left: 0;
+      height: 4.8rem;
+    }
+
+    span {
+      position: relative;
+      &::after {
+        letter-spacing: 0;
+        content: attr(data-py);
+        position: absolute;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        top: -3.4rem;
+        font-size: 2rem;
+      }
+    }
+  }
+  .main-box {
+    @include full-view;
+    @include flex-center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .card-result {
+      padding: 4rem 6rem;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      width: 40rem;
+
+      .progress {
+        position: relative;
+        margin-top: 4rem;
+        box-shadow: 0 0 0.4rem rgba($color-white, $alpha: 0.7);
+        background-color: rgba($color-dark-1, 0.3);
+        height: 4.8rem;
+        border-radius: 0.5rem;
+
+        .status {
+          position: absolute;
+          font-size: 4rem;
+          bottom: 100%;
+        }
+        .birth {
+          left: -3rem;
+        }
+        .die {
+          right: -3rem;
+        }
+
+        &__bar {
+          height: 100%;
+          background-color: green;
+          border-radius: 0.5rem 0 0 0.5rem;
+          position: relative;
+          transition: width 0.7s;
+
+          .man {
+            right: -2rem;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color-black, $alpha: 0.2);
+            animation: progress-bar 2s ease-in-out infinite;
+          }
+        }
+      }
+      .text-list {
+        @include flex-center;
+        flex-direction: column;
+        list-style: none;
+        padding-top: 4rem;
+        font-size: 2.4rem;
+
+        .life-data {
+          font-size: 3rem;
+          font-weight: 700;
+          margin: 0 0.3rem;
+        }
+
+        :not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    .card-setting {
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      width: 40rem;
+    }
+
+    .icon-set {
+      position: fixed;
+      bottom: 6rem;
+      right: 4rem;
+      width: 6rem;
+      height: 6rem;
+      background-color: rgba($color-dark-1, $alpha: 0.7);
+      border-radius: 50%;
+      @include flex-center;
+      transition: transform 0.4s;
+      cursor: pointer;
+
+      &:active {
+        transform: scale(0.97);
+      }
+      &::before {
+        font-size: 5rem;
+        color: rgba($color-white, $alpha: 0.4);
+      }
+    }
+  }
+}
+@media screen and(max-width:700px) {
+  .life-progress {
+    .header-box {
+      top: 3.5rem !important;
+      font-size: 4.6rem !important;
+      span::after {
+        font-size: 1.8rem !important;
+        top: -2.4rem !important;
+      }
+    }
+    .card-setting {
+      width: auto !important;
+    }
+    .card-result {
+      width: 35rem !important;
+      padding: 2rem !important;
+
+      .text-list {
+        font-size: 2rem !important;
+
+        :not(:last-child) {
+          margin-bottom: 0.4rem !important;
+        }
+      }
+    }
+    .icon-set {
+      right: 2rem !important;
+      bottom: 3rem !important;
+    }
+  }
+}

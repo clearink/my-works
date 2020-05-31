@@ -1,0 +1,99 @@
+.css-arrow {
+  @include full-view;
+  background-color: rgba($color-black, $alpha: 0.5);
+  font-family: "Terminal Dosis", sans-serif;
+  user-select: none;
+  .copy-text {
+    position: absolute;
+    left: -999px;
+  }
+  .header-box {
+    text-align: center;
+
+    .header__title {
+      padding: 4rem 0;
+      font-size: 4rem;
+      font-weight: 600;
+      color: $color-white;
+      text-transform: uppercase;
+    }
+  }
+  .main-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 99rem;
+    margin: 0 auto;
+
+    &__left {
+      flex-basis: 50%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .arrow-box {
+        @include flex-center;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 3.4rem;
+        font-weight: 600;
+        width: 30rem;
+        height: 20rem;
+        border-radius: 1rem;
+        background-color: $color-primary-1;
+      }
+
+      .arrow-config {
+        &__position {
+          @include flex-center;
+          height: 10rem;
+        }
+        .border-width-box {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+
+    &__right {
+      flex-basis: 50%;
+      padding-bottom: 3rem;
+      .code-box {
+        max-width: 35rem;
+        margin: 0 auto;
+        position: relative;
+        border: 1rem solid $color-primary-2;
+        border-radius: 1rem;
+        background-color: $color-dark-1;
+        color: $color-white;
+        padding: 2rem;
+
+        .btn {
+          background-color: $color-primary-3;
+          border: none;
+          width: 6rem;
+          position: absolute;
+          right: 2rem;
+          top: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .main-box {
+    box-sizing: border-box;
+    flex-direction: column;
+    &__left {
+      margin-bottom: 10rem;
+    }
+  }
+}
+// @media screen and (max-width: 400px) {
+//   .arrow-show-box {
+//     width: 20rem !important;
+//     font-size: 2rem !important;
+//     padding: 4rem !important;
+//   }
+// }

@@ -1,0 +1,96 @@
+.result-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 70rem;
+  height: 80rem;
+  will-change: transform;
+  background-color: rgba($color-primary-8, $alpha: 1);
+  color: $color-white;
+  border-radius: 1rem;
+
+  .result-header-box {
+    @include flex-center;
+    flex-basis: 10rem;
+    width: 100%;
+    position: relative;
+    .time-cost {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+    .icon-close {
+      cursor: pointer;
+      @include flex-center;
+      position: absolute;
+      border-radius: 50%;
+      width: 5rem;
+      height: 5rem;
+      background-color: rgba($color-black, 0.7);
+      right: 3rem;
+      transition: opacity 0.4s;
+      &::before {
+        font-size: 3.5rem;
+      }
+
+      &:active {
+        opacity: 0.56;
+      }
+    }
+  }
+  .result-game-box {
+    @include flex-center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 1rem;
+    width: 60rem;
+    height: 64rem;
+    background-color: $color-dark-1;
+    border-radius: 1rem;
+    will-change: transform;
+    .card-box {
+      padding: 2rem;
+      border-radius: 1rem;
+      background-color: rgba($color-primary-8, $alpha: 0.6);
+      will-change: transform;
+      position: relative;
+      flex-basis: 22%;
+      height: 22%;
+      list-style: none;
+      perspective: 100rem;
+      cursor: pointer;
+
+      .card-img {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+@media screen and(max-width:700px) {
+  .result-box {
+    width: 94vw;
+    height: 66vh;
+
+    .result-game-box {
+      width: 90vw;
+      height: 90vw;
+    }
+    .result-header-box {
+      flex-basis: 6rem;
+      .time-cost {
+        font-size: 2rem;
+        margin-bottom: 0;
+      }
+      .icon-close {
+        width: 3.4rem;
+        height: 3.4rem;
+        &::before {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}

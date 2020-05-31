@@ -1,0 +1,124 @@
+.breathe-relaxer {
+  @include full_view;
+  @include bg;
+  @include flex-center;
+  flex-direction: column;
+
+  transition: background 1s;
+  color: $color-white;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Microsoft YaHei";
+  transform: background 1s;
+
+  .header-box {
+    flex-basis: 10rem;
+    padding: 2rem 0;
+    font-size: 5rem;
+  }
+
+  .main-box {
+    flex: 1;
+    @include flex-center;
+
+    .button {
+      border: none;
+      @include flex-center;
+      cursor: pointer;
+      width: 14rem;
+      height: 14rem;
+      background-color: rgba($color-dark-1, $alpha: 0.7);
+      border-radius: 50%;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.8);
+      transition: transform 0.4s;
+      will-change: transform;
+      animation: scale 10s linear infinite alternate-reverse;
+    }
+    .breathe-box {
+      box-sizing: border-box;
+      width: 30rem;
+      height: 30rem;
+      border-radius: 50%;
+      @include flex-center;
+      background-image: conic-gradient(
+        rgba($color-primary-5, 0.8) 0%,
+        rgba($color-primary-5, 0.8) 40%,
+        rgba($color-dark-1, 0.8) 40%,
+        rgba($color-dark-1, 0.8) 60%,
+        rgba($color-primary-6, 0.8) 60%,
+        rgba($color-primary-6, 0.8) 100%
+      );
+      box-shadow: 0 0.2rem 2rem $color-dark-1;
+      &.inhale {
+        animation: inhale 3s forwards;
+      }
+      &.hold {
+        animation: hold 2s forwards;
+      }
+      &.exhale {
+        animation: exhale 3s forwards;
+      }
+      .circle {
+        position: relative;
+        @include flex-center;
+        width: 25rem;
+        height: 25rem;
+        transition: background-color 1s ease-in-out;
+        border-radius: 50%;
+
+        .pointer-container {
+          position: absolute;
+          height: 46rem;
+
+          &.inhale {
+            animation: inhale-rotate 3s linear forwards;
+          }
+          &.hold {
+            animation: hold-rotate 2s linear forwards;
+          }
+          &.exhale {
+            animation: exhale-rotate 3s linear forwards;
+          }
+
+          .pointer {
+            display: block;
+            opacity: 0.7;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            transition: background-color 0.4s;
+            box-shadow: 0 0 1rem $color-black;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-box {
+    flex-basis: 10rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    span {
+      cursor: pointer;
+      margin: 1rem;
+      @include flex-center;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background-color: rgba($color-dark-1, $alpha: 0.7);
+
+      .icon-sound-mute,
+      .icon-sound-filling,
+      .icon-refresh {
+        font-size: 3rem;
+        font-weight: 100;
+      }
+      &:active {
+        transition: transfrorm 0.4s;
+        transform: scale(0.95);
+      }
+    }
+  }
+}

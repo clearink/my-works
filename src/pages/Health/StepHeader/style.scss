@@ -1,0 +1,42 @@
+.step-header {
+  display: flex;
+  flex-basis: 8rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 2rem;
+  border-bottom: 1px solid rgba($color-black, $alpha: 0.3);
+
+  &__logo {
+    width: 4rem;
+    height: 4rem;
+    padding: 1rem;
+    box-sizing: content-box;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba($color-primary-1, $alpha: 0.2);
+  }
+
+  .title-wrap {
+    flex: 1;
+    @include flex-center;
+  }
+  &__title {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  &__subtitle {
+    font-size: 2rem;
+    font-weight: 100;
+    margin-left: 1rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .step-header {
+    margin-bottom: 2rem;
+    &__subtitle {
+      font-size: 1.6rem;
+    }
+  }
+}

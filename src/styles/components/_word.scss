@@ -1,0 +1,21 @@
+.word {
+  @include flex-center;
+  position: relative;
+  border: 1px solid;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: black;
+  }
+  &::before {
+    width: 1px;
+  }
+  &::after {
+    height: 1px;
+  }
+}

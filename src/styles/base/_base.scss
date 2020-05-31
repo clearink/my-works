@@ -5,3 +5,13 @@
   padding: 0;
   box-sizing: inherit;
 }
+html {
+  font-size: 62.5%;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+@font-face {
+  font-family: "SJ";
+  src: url("../../assets/font/FZSJSJW.TTF");
+}

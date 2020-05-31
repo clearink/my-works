@@ -1,0 +1,14 @@
+.setting-form {
+  label {
+    color: $color-white !important;
+  }
+  button {
+    margin-top: 2rem;
+    width: 100%;
+    font-size: 2rem;
+    height: 4rem;
+  }
+  .ant-picker {
+    width: 200px;
+  }
+}

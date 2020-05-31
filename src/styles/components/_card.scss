@@ -1,0 +1,6 @@
+.card {
+  background-color: rgba($color-black, $alpha: 0.4);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 1rem $color-black;
+  border-radius: 2rem;
+}

@@ -1,0 +1,27 @@
+.sweet-word-result {
+  @include flex-center;
+  will-change: transform;
+  flex-direction: column;
+  padding: 4rem;
+  background-color: rgba($color-pink-2, 0.4);
+  max-width: 80%;
+  border-radius: 1rem;
+  .line {
+    @include flex-center;
+    flex-wrap: wrap;
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+    .word {
+      color: $color-pink-3;
+      font-size: 6rem;
+      height: 7rem;
+      width: 7rem;
+      border-color: $color-pink-2;
+      &::before,
+      &::after {
+        background-color: $color-pink-2;
+      }
+    }
+  }
+}

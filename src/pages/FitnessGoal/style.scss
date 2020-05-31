@@ -1,0 +1,85 @@
+.fitness-goal {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: $color-white;
+  position: relative;
+  background-image: linear-gradient(
+    to bottom,
+    $color-grey-2 40%,
+    $color-grey-3
+  );
+  @include flex-center;
+
+  .image-wrap {
+    position: absolute;
+    transform: scale(1.1);
+    width: 100vw;
+    height: 100vh;
+    @include bg;
+  }
+  .count {
+    position: absolute;
+    font-size: 8rem;
+    padding: 0.8rem 4rem;
+    border-radius: 2rem;
+    box-shadow: 0 0.4rem 1rem rgba($color-black, $alpha: 0.4);
+    background-color: rgba($color-black, $alpha: 0.2);
+    animation: floating 10s linear infinite alternate forwards;
+  }
+  .again-btn {
+    position: absolute;
+    bottom: 10rem;
+    width: 15rem;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 3rem;
+    z-index: 2;
+  }
+
+  .finish-image {
+    height: 80rem;
+    width: 50rem;
+    z-index: 1;
+    @include bg;
+  }
+}
+
+.action-wrap {
+  color: $color-white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+
+  @include flex-center;
+
+  .image-select {
+    position: absolute !important;
+    right: 2rem;
+    top: 2rem;
+    color: $color-white;
+    width: 100px;
+    .ant-select-selector {
+      background-color: transparent !important;
+    }
+  }
+
+  .time-select {
+    width: 20rem;
+    color: $color-white;
+    .ant-select-selector {
+      background-color: transparent !important;
+    }
+  }
+
+  .start-btn {
+    position: absolute;
+    bottom: 10rem;
+    width: 15rem;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 4rem;
+  }
+}

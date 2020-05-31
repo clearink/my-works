@@ -1,0 +1,88 @@
+.health__item {
+  flex: 1;
+  @include flex-center;
+  flex-direction: column;
+  user-select: none;
+
+  .action-box {
+    flex: 1;
+    @include flex-center;
+    will-change: transform;
+    flex-wrap: wrap;
+
+    .action {
+      &__number {
+        @include flex-center;
+        position: relative;
+        top: -6rem;
+        font-size: 4rem;
+        color: $color-white;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-color: rgba($color-primary-1, $alpha: 0.4);
+      }
+
+      &__content {
+        max-width: 20rem;
+        margin: 0 1rem 0 2rem;
+
+        :not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        &--title {
+          font-size: 6rem;
+          font-weight: 800;
+        }
+        &--intro {
+          font-size: 2.6rem;
+          font-weight: 100;
+        }
+        &--detail {
+          font-size: 2rem;
+          color: rgba($color-primary-2, $alpha: 0.8);
+        }
+      }
+
+      &__img {
+        width: 25rem;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .navbar-box {
+    flex-basis: 10rem;
+    @include flex-center;
+
+    .iconfont {
+      cursor: pointer;
+      @include flex-center;
+      width: 5rem;
+      height: 5rem;
+      background-color: rgba($color-dark-1, $alpha: 0.4);
+      color: $color-primary-7;
+      transition: transform 0.3s;
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+      border-radius: 50%;
+      &::before {
+        font-size: 3rem;
+      }
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  .footer-box {
+    flex-basis: 15rem;
+    font-size: 3rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,1 +1,20 @@
 @import "./base/base";
+@import "./base/variable";
+@import "./base/mixin";
+@import "./base/animate";
+
+@import "./components/button";
+@import "./components/card";
+@import "./components/word";
+
+@import "../pages/Home/style.scss";
+@import "../pages/HtmlSupportColor/style.scss";
+@import "../pages/MiniTimer/style.scss";
+@import "../pages/FitnessGoal/style.scss";
+@import "../pages/CssArrow/style.scss";
+@import "../pages/BreatheRelaxer/style.scss";
+@import "../pages/Bullet/style.scss";
+@import "../pages/Health/style.scss";
+@import "../pages/LifeProgress/style.scss";
+@import "../pages/MemoryCard/style.scss";
+@import "../pages/SweetWord/style.scss";

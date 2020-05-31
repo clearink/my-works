@@ -1,0 +1,19 @@
+.button {
+  cursor: pointer;
+  text-transform: uppercase;
+  will-change: transform;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  border: 1px solid;
+  user-select: none;
+
+  &:active {
+    transition: all 0.3s;
+    transform: scale(0.99) !important;
+  }
+}
+.button--default {
+  @extend .button;
+  background-color: transparent;
+}

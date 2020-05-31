@@ -1,0 +1,87 @@
+.html-supprot-color {
+  font-family: "Terminal Dosis", sans-serif;
+  box-sizing: border-box;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($color-grey-1, 0.5),
+    rgba($color-grey-1, 1)
+  );
+  .select-box {
+    position: fixed;
+    top: -33300px;
+  }
+  .header {
+    font-size: 4rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0 0.6rem 1rem rgba($color-black, $alpha: 0.15);
+  }
+}
+.color-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 4rem;
+  &__item {
+    font-size: 1.8rem;
+    display: flex;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba($color-black, $alpha: 0.14);
+    height: 8rem;
+
+    @include flex-center;
+    @include color-list-layout;
+
+    &--color {
+      p {
+        width: 8rem;
+        height: 5rem;
+        line-height: 5rem;
+        text-align: center;
+      }
+    }
+    &--name {
+      span {
+        font-weight: 600;
+        cursor: pointer;
+        padding: 2rem 0;
+      }
+    }
+    &--hex {
+      span {
+        cursor: pointer;
+        padding: 2rem 0;
+      }
+    }
+    &--rgb {
+      span {
+        cursor: pointer;
+        padding: 2rem 0;
+      }
+    }
+  }
+  &__header {
+    @extend .color-list__item;
+    font-size: 2.4rem;
+    color: $color-primary-1;
+    height: 7rem;
+
+    @include flex-center;
+    @include color-list-layout;
+  }
+}
+@media screen and (max-width: 750px) {
+  .color-list__header--hex,
+  .color-list__header--rgb,
+  .color-list__item--hex,
+  .color-list__item--rgb {
+    display: none;
+  }
+  .color-list__header--color,
+  .color-list__item--color{
+    flex-basis: 50%;
+  }
+  .header{
+    font-size: 2rem !important;
+  }
+}

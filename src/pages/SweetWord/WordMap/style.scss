@@ -1,0 +1,26 @@
+.word-map {
+  @include flex-center;
+  flex-wrap: wrap;
+  width: 50rem;
+  height: 50rem;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 70% 80%, 70% 100%, 50% 80%, 0 80%);
+  background-color: rgba(black, $alpha: 0.4);
+
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  .word {
+    color: white;
+    font-size: 8rem;
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid $color-pink-1;
+    margin: 0.4rem;
+    &::before,
+    &::after {
+      background-color: rgba($color-pink-1, 0.5);
+    }
+  }
+}
